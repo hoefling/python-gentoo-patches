@@ -33,10 +33,11 @@ diff --git a/Misc/python-config.in b/Misc/python-config.in
 index 7144152227..d55cd2329c 100644
 --- a/Misc/python-config.in
 +++ b/Misc/python-config.in
-@@ -50,11 +50,6 @@ for opt in opt_flags:
-         libs = ['-lpython' + pyver + sys.abiflags]
-         libs += getvar('LIBS').split()
-         libs += getvar('SYSLIBS').split()
+@@ -56,12 +56,6 @@ for opt in opt_flags:
+             if libpython:
+                 libs.append(libpython)
+         libs.extend(getvar('LIBS').split() + getvar('SYSLIBS').split())
+-
 -        # add the prefix/lib/pythonX.Y/config dir, but only if there is no
 -        # shared library in prefix/lib/.
 -        if opt == '--ldflags':
